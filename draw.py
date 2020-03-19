@@ -122,10 +122,12 @@ def draw_plot():
     print("Graph is %.2f by %.2f" % ((maxx-minx)/resolution,(maxy-miny)/resolution))
 
     fig.set_size_inches((maxx-minx)/resolution,(maxy-miny)/resolution)
-    fig.savefig("somethingveryhightimetest.png", dpi=resolution)
+    fig.savefig("something.png", dpi=resolution)
     end = time.time()
     print("%.2f seconds" % (end - start))
-    end = time.time()
+    reportTime = open("report.txt","a")
+    reportTime.write("\n"+str(end-start))
+    reportTime.close()
     print("Line thickness was "+str(np.nextafter(0,1)))
     
 
